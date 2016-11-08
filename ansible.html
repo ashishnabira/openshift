@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/nabira.css"> 
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					
+					<h1>Ansible</h1>
+					<h2>Simple, Powerful and Agentless</h2>
+                    <small>
+					<p>Created by <a href="http://ashishnabira.com">Ashish Nabira</a> / <a href="http://twitter.com/ashishnabira">@ashishnabira</a></p>
+					<p>Sr. Solution Architect</p>
+					<p>Redhat India</p>
+					<p>ashish.nabira@redhat.com</p>
+                    </small>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+					 <p class="fragment" data-fragment-index="1">Why Systems automation?</p>
+    					<p class="fragment" data-fragment-index="2">What is Ansible?</p>
+    					<p class="fragment" data-fragment-index="3">Architecture</p>
+    					<p class="fragment" data-fragment-index="4">Use cases of Ansible</p>
+    					<p class="fragment" data-fragment-index="4">Customers</p>
+   					<p class="fragment" data-fragment-index="5">Questions and Answers</p>
+				</section>
+
+
+
+
+				<section>
+					<h2>Once upon a time </h2>
+					<h3> Datacenters were simple</h3>
+					<h3> One server, one OS, one service</h3>
+					<h4>we had shell scripts </h4>
+					<h4>and ssh loops </h4>
+				</section>
+
+				<section>
+					<h2>Then it all got complicated </h2>
+					<p>Today’s IT brings complex deployments and complex challenges. You’ve got to deal with clustered applications, multiple datacenters, public, private and hybrid clouds and applications with complex dependencies. You need a tool that can orchestrate your complex tasks simply. You need Ansible.</p>
+				</section>
+
+				<section>
+				<section>
+					<h2>This is what we all need </h2>
+						<img width="920" height="599" src="ansible-httpd-playbook-simple.png" alt="Meny">
+
+
+				</section>
+				<section>
+					<h2>Install, Configure Apache through playbook </h2>
+						<img width="920" height="599" src="ansible-httpd-install.png" alt="Meny">
+					</a>
+				</section>
+ <section>
+                                        <h2>Install, Configure Apache Ad-Hoc </h2>
+                                                <img width="920" height="599" src="ansible-httpd-install-adhoc.png" alt="Meny">
+                                        </a>
+                                </section>
+
+                                <section>
+                                        <h2>Install, Configure Apache Ad-Hoc </h2>
+                                                <img width="920" height="599" src="ansible-httpd-removed.png" alt="Meny">
+                                        </a>
+                                </section>
+
+
+				</section>
+
+
+				<section>
+					<h2>Welcome to Ansible</h2>
+					<h3>Zero to Prod in minutes !!!</h3>
+				</section>
+
+
+				<section>
+					<h4>Automation should not require any programming experience </h4>
+					<h3>It must be EASY </h3>
+					<h3>Automation for Everyone.</h3>
+				</section>
+
+				<section>
+					<h2>It works with</h2>
+					<h4 class=fragment>Unix </h4>					
+					<h3 class=fragment>Linux </h3>
+					<h3 class=fragment>Windows </h3>
+					<h3 class=fragment>Docker Containers </h3>
+					<h3 class=fragment>Virtualization platforms </h3>
+					<h3 class=fragment>Network routers,switches,Firewalls,etc </h3>
+					<h3 class=fragment>Openstack Cloud,AWS, Azure, Google,Rackspace etc </h3>
+				<p class=fragment><br> Most of the stuff you need is already built-in</p>
+				</section>
+
+				<!-- section>
+					<h2>Physical, Virtual Cloud or Containers</h2>
+					<ol>
+						<li>Openstack</li>
+						<li>AWS</li>
+						<li>Azure</li>
+						<li>Google Compute</li>
+						<li>Docker Containers</li>
+
+					</ol>
+				</section -->
+
+				<section>
+					<h2>Use Cases for Ansible</h2>
+					 <p class="fragment" data-fragment-index="1">Provisioning</p>
+					 <p class="fragment" data-fragment-index="2">Configuration Management</p>
+					 <p class="fragment" data-fragment-index="3">Application deployment</p>
+					 <p class="fragment" data-fragment-index="4">Continuous Integration</p>
+					 <p class="fragment" data-fragment-index="5"> Orchestration</p>
+					 <p class="fragment" data-fragment-index="6">Security and Compliance </p>
+				</section>
+
+
+
+			<section>
+						<h3>MySQL DB provisioning example </h3>
+						<p class="fragment">What all things you do after your Linux VM is provisioned</p>
+						<ol>
+						<li class="fragment"> Change OS parameters to suit DB</li>
+						<li class="fragment"> Install database</li>
+						<li class="fragment"> Change configuation file for DB</li>
+						<li class="fragment"> Enable and start DB</li>
+						<li class="fragment"> Setup Backup script for DB</li>
+						<li class="fragment"> Setup cronjob for scheduling backup</li>
+						<li class="fragment"> Get the list of users</li>
+						<li class="fragment"> Get the list of databases</li>
+						<li class="fragment"> Remove test DB</li>
+						<li class="fragment"> Add new DB</li>
+						</ol>
+					</section>
+					<section>
+
+						<h3>MySQL DB provisioning example </h3>
+						
+						<ul>
+						<p class="fragment"> 11. Setup new users</li>
+						<p class="fragment"> 12. Setup permissions for users on DB</li>
+						<p class="fragment"> 13. Disable remote login for DB</li>
+						<p class="fragment"> 14. Setup root password for DB</li>
+						<p class="fragment"> 15. Setup replication for DB</li>
+						<p class="fragment"> 16. Check master and slave status for DB</li>
+						<p class="fragment"> 17. Start replication </li>
+
+						</ul>
+					</section>
+
+
+			
+				<section>
+					<h2>Automation for everyone </h2>
+					<h3> Deploy Apps, manage systems, crush complexity</h3>	
+					<p>Ansible helps you build a strong foundation for DevOps.</p>
+				</section>
+
+				<section>
+					<h2>Architecture </h2>
+						<img width="920" height="599" src="ansible-modulus-operandi.png" alt="Meny">
+					</a>
+				</section>
+
+
+				<section>
+					<h2>Application Deployment </h2>
+						<img width="920" height="599" src="app-deployment-ansible.png" alt="Meny">
+					</a>
+				</section>
+
+
+				<section>
+					<h2>Configuration Management </h2>
+					<a class="image" href="http://ashishnabira.com/" target="_blank">
+						<img width="920" height="599" src="config-mgmt-ansible.png" alt="Meny">
+					</a>
+				</section>
+
+
+				<section>
+					<h2>Continuous Integration </h2>
+						<img width="920" height="599" src="jenkins-job-ansible.png" alt="Meny">
+					</a>
+				</section>
+
+				<section>
+					<h2>CI/CD </h2>
+						<img width="920" height="599" src="ci-cd-ansible.png" alt="Meny">
+					</a>
+				</section>
+
+
+				<section>
+					<h2>Integration with Windows</h2>
+
+					<ul>
+						<li class=fragment>Gather facts on Windows hosts</li>
+						<li class=fragment>Install and uninstall MSIs</li>
+						<li class=fragment >Enable and disable Windows Features</li>
+						<li class=fragment>Start, stop, and manage Windows services</li>
+						<li class=fragment>Create and manage local users and groups</li>
+						<li class=fragment>Manage Windows packages via the Chocolatey package manager</li>
+						<li class=fragment>Manage and install Windows updates</li>
+						<li class=fragment>Fetch files from remote sites</li>
+						<li class=fragment>Push and execute any PowerShell scripts you write</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-os.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-vmware.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-virtualization.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-networks.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-cloud.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-containers.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Integrations</h2>
+						<img width="920" height="599" src="ansible-devops-tools.png" alt="Meny">
+				</section>
+
+
+				<section>
+					<h2>Customers</h2>
+						<img width="920" height="599" src="ansible-customers.png" alt="Meny">
+				</section>
+
+
+				<section>
+					<h2>Competetion </h2>
+				<ul>
+					<h3>Saltstack </h3>
+					<h3>Chef </h3>
+					<h3>Puppet </h3>
+					<h3>Microsoft SCCM </h3>
+					<h3>BMC Control M </h3>
+					<h3>CA Client Automation </h3>
+					<h3>Shell Scripts </h3>
+				</ul>
+				</section>
+
+				<section>
+				<h3> BMC Control M</h3>
+				<ul>
+				<p> It's used for batch automation</p>
+				<p> It can work with Mainframes, Unix, Linux, Windows, OpenVMS</p>
+				<p> It's in leaders quadrant</p>
+				<p> <br></p>
+				<p> Can't work as Devops tool</p>
+				<p> Proprietary</p>
+				<p> Expensive</p>
+				<p> Requires Agent</p>
+				</ul>
+				</section>
+
+				<section>
+				<h3> CA Client Automation</h3>
+
+				<ul>
+                                <p> It's used for Client devices automation</p>
+                                <p> It can work with VDI solutions </p>
+                                <p> It gives you software inventory capabilities for desktops</p>
+                                <p> Mainly designed for desktop management</p>
+                                <p> Can't work as Devops tool</p>
+                                <p> Proprietary</p>
+                                <p> Expensive</p>
+
+				</ul>
+				</section>
+
+
+				<section>
+					<h2>Ansible Tower</h2>
+						<p>https://ansible.com/tower <br></p>
+						<p> <br></p>
+					<ul>
+<li>Centralize  control with a visual dashboard</li>
+<li>Role-based access control</li>
+<li>Job scheduling</li>
+<li>Graphical inventory management.</li>
+<li>Audit trails</li>
+<li>Association of playbooks with particular  Job</li>
+<li>Notifications of job completion</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ansible Tower 3</h2>
+						<img width="920" height="599" src="ansible-tower.png" alt="Meny">
+				</section>
+
+
+				<section>
+					<h2>You've freed yourself </h2>
+					<h4>Now go & free others </h4>
+					<h3>Thank you.</h3>
+				</section>
+
+<section data-markdown data-background-image="redhat-222.png" data-background-size="150px" data-state="img-right">
+
+                <script type="text/template">
+##Ansible
+###Ashish Nabira
+ Sr. Solution Architect
+ 
+ashish.nabira@redhat.com
+                </script>
+</section>
+
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				history: true,
+				slideNumber: true, 
+				mousewheel: true, 
+
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
