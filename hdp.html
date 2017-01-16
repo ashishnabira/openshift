@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HADOOP</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/nabira.css"> 
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<section>
+					
+					<h2>Hadoop</h2>
+					<h3>Big Data</h3>
+                    <small>
+					<p>Created by <a href="http://ashishnabira.com">Ashish Nabira</a> </p>
+					<p>Powered by <a href="http://openshift.com">OpenShift</a> </p>
+                    </small>
+				</section>
+
+<section>
+					<h2>Agenda</h2>
+					<ul>
+				<li class=fragment>	What is Hadoop? </li>
+				<li class=fragment>	Why Hortonworks for Hadoop? </li>
+				<li class=fragment>	Why Hadoop for given use case</li>
+				<li class=fragment>	Architecture of Solution</li>
+				<li class=fragment>	Q & A</li>
+					</ul>
+
+
+				</section>
+
+
+
+<section>
+					<h2>What is Hadoop? </h2>
+				<p> Hadoop is Opensource framework to store and process large sets of data in short time.</p>
+				<p> Organizations are collecting data from years. Now they want to extract useful information out of it,  to remain competive.</p>
+
+
+				</section>
+
+<section> 
+					<h2>Fast paced software development... </h2>
+					<h4>Social,Mobile,Analytics and Cloud </h2>
+					<a class="image" href="http://ashishnabira.com/" target="_blank">
+						<img width="920" height="599" src="smac.png" alt="Meny">
+					</a>
+				</section>
+
+<section>
+ The ability to extract high value from stored data to enable innovation and competitive gain is the purpose of Big Data analytics.  Conducting analytics on large sets of data, business users and executives are able to see patterns and trends in performance, new relationships between data sets and potentially new sources of revenue.
+</section>
+
+<section>
+					<h3> Why Hortonworks for Hadoop?</h3>
+					<ol>
+					 <li  class="fragment" data-fragment-index="1"> #1 contributor to Hadoop</li>
+                                         <li class="fragment" data-fragment-index="2"> 1000 customers in 17 countries</li>
+                                         <li class="fragment" data-fragment-index="3">Growing more than 100 %</li>
+                                         <li class="fragment" data-fragment-index="4"> Solutions implemented in areas like BFSI, Telecom, Govt, Oil and Gas, Pharma, eCommerce, Trasport, etc</li>
+                                         <li class="fragment" data-fragment-index="6"> Certified to work with Openstack Sahara Project </li>
+					</ol>
+				</section>
+
+<section>
+
+                                        <h3>Support and Services </h3>
+                                        <p class="fragment">
+                                        Everything you need to become an expert with  Big Data !!
+                                        </p>
+                                        <ol class="fragment">
+                                        <li> Product Help </li>
+                                        <li> 24 x7 support </li>
+                                        <li> Training </li>
+                                        <li> Professional Service </li>
+                                        </ol>
+                                </section>
+
+
+<section  >
+
+<h3> Solution Architecture </h3>
+
+
+				</section>
+
+<section>
+<h3> Why Hadoop for this use case</h3>
+<p> Volume of data is big</p>
+<p> Velocity of data is big</p>
+<p> Variety of data is also big</p>
+<p> That's why we need BIG DATA solution here .</p>
+
+</section>
+
+<section>
+					<h2>Technologies used</h2>
+					<ol>
+					<li class="fragment" data-fragment-index="1"> Amazon S3 </li>
+					<li class="fragment" data-fragment-index="2"> Messaging -- Kafka </li>
+					<li class="fragment" data-fragment-index="3"> Database --Sqooq Hive </li>
+					<li class="fragment" data-fragment-index="4"> Ambari -- Cluster mgmt </li>
+					<li class="fragment" data-fragment-index="5"> Apache Solr -- Indexing and search  </li>
+					<li class="fragment" data-fragment-index="6">  Storm for fast processing of relatime stream processing </li>
+					<li class="fragment" data-fragment-index="7"> Spark for in memory processing of data with SCALA </li>
+				</section>
+
+
+<section>
+					<h3>High level Solution Architecture </h3>
+
+					<a class="image" href="http://ashishnabira.com/" target="_blank">
+
+						<img width="1080" height="599" src="hdp-arch1.png" alt="Meny">
+					</a>
+
+				</section>
+
+
+
+<section>
+					<a class="image" href="http://ashishnabira.com/" target="_blank">
+						<img width="1020" height="699" src="hdp-arch2.png" alt="Meny">
+					</a>
+				</section>
+
+
+<section data-markdown>
+
+                <script type="text/template">
+###Ashish Nabira
+ Sr. Solution Architect
+ 
+ashish.nabira@gmail.com
+                </script>
+</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				history: true,
+				slideNumber: true, 
+				mousewheel: true, 
+
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

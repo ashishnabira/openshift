@@ -24,12 +24,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
 				<section>
 					
 					<h1>Ansible</h1>
 					<h2>Simple, Powerful and Agentless</h2>
                     <small>
-					<p>Created by <a href="http://ashishnabira.com">Ashish Nabira</a> / <a href="http://twitter.com/ashishnabira">@ashishnabira</a></p>
+					<p>Created by Anuva  <a href="http://ashishnabira.com">Ashish Nabira</a> / <a href="http://twitter.com/ashishnabira">@ashishnabira</a></p>
 					<p>Sr. Solution Architect</p>
 					<p>Redhat India</p>
 					<p>ashish.nabira@redhat.com</p>
@@ -161,6 +162,18 @@
 			6.	Collect log files in central location
 			7.	Remove venerable packages and replace them with secure ones
 			8.	Keep check on directory for change
+			9.	Add switches to DNS
+			10.	Add to monitoring systems
+			11. 	Add to inventory tracking	
+			</script>	
+				</section>
+
+				<section data-markdown>
+<script type="text/template">
+
+## It organisations using configuration management software deploys 30X frequently, with 200X shorter lead times, they have 60X fewer failures and 168X fast to recover !!
+
+
 			</script>	
 				</section>
 
@@ -367,7 +380,58 @@
 					<h2>You've freed yourself </h2>
 					<h4>Now go & free others </h4>
 					<h3>Thank you.</h3>
-				</section>
+			</section>
+
+<section data-markdown data-background-image="redhat-222.png" data-background-size="150px" data-state="img-right">
+
+
+### If you use Jenkins and Ansible Core:
+* Need to install Core on every Jenkins Master/Slave instance. (audit alert)
+* Need to copy or mount Playbooks directory on each Jenkins instance
+* Credentials stored on Jenkins instance (security and audit alert)
+* RBAC scope limited to Jenkins only
+
+### What are you missing out if you don't use CJE+Ansible Tower:
+* Multiple Ansible Core version and instances to maintain (audit alert)
+* Cannot manage and share Playbooks securely
+* Cannot use SCMS to specify branch at runtime of Job Templates.
+* Cannot dynamically specify Playbooks at runtime
+* Credentials are not securely stored on Jenkins (audit alert)
+* No restrictions and RBAC around projects, inventory, job templates
+* Std.out can be tampered or lost if not piped at Playbook (audit alert)
+* Provision new environment in hybrid environments is harder
+* In conclusion, having Tower just makes it easier to implement your build process and be compliant to audit requirements.
+
+</section>
+
+<section data-markdown data-background-image="redhat-222.png" data-background-size="150px" data-state="img-right">
+
+                <script type="text/template">
+
+** Out of the box, Ansible has over 50 modules, supporting nearly 20 different AWS capabilities, including: **
+
+* AMI Management
+* Autoscaling Groups
+* CloudFormation
+* CloudTrail
+* CloudWatch
+* DynamoDB
+* ElastiCache
+* Elastic Block Store (EBS)
+* Elastic Cloud Compute (EC2)
+* Elastic IPs (EIP)
+* Elastic Load Balancers (ELB)
+* Identity Access Manager (IAM)
+* Relational Database Service
+* Route53
+* Security Groups
+* Security Token Service
+* Simple Storage Service (S3)
+* Virtual Private Cloud (VPC)
+
+                </script>
+
+</section>
 
 <section data-markdown data-background-image="redhat-222.png" data-background-size="150px" data-state="img-right">
 
