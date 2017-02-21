@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Ashish Nabira's Presentations</title>
+		<title>Oracle Presentation</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/nabira.css"> 
@@ -24,33 +24,237 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
+
+<section>
 					
-					<h2>Welcome to my presenations</h2>
+					<h2>Business Case Presentation</h2>
+					<h3>Oracle</h3>
                     <small>
-					<p><a href="http://presentations-nabira.rhcloud.com/openshift.html">Openshift</a> </p>
-					<p><a href="http://presentations-nabira.rhcloud.com/ansible.html">Ansible</a> </p>
-					<p><a href="http://presentations-nabira.rhcloud.com/hdp.html">Hortonworks</a> </p>
-					<p><br>Ashish Nabira</p>
-					<p>Sr. Solution Architect</p>
-					<p>Redhat India</p>
-					<p>ashish.nabira@redhat.com</p>
+					<p>Created by <a href="http://ashishnabira.com">Ashish Nabira</a> </p>
+					<p>Powered by <a href="http://openshift.com">OpenShift</a> </p>
                     </small>
 				</section>
 
+<section>
+					<h2>Agenda</h2>
+					<ul>
+				<li class=fragment>	Current infrastructure of web application </li>
+				<li class=fragment>	Business requirements </li>
+				<li class=fragment>     Suggested changes in Architecture of application</li>
 
-<!-- section data-markdown data-background-image="redhat-222.png" data-background-size="150px" data-state="img-right">
+				<li class=fragment>	Q & A</li>
+					</ul>
+
+				</section>
+
+
+
+<section>
+					<h2>Current infrastructure of application </h2>
+
+					<ul>
+
+				         <li class=fragment>	Three tier Java application </li>
+				         <li class=fragment>	MySQL database </li>
+				         <li class=fragment>	Business critical OLTP application </li>
+				         <li class=fragment>	Key reauirement is to support as many concurrent user as possible </li>
+				         <li class=fragment>	Response time should be less than 6 sec </li>
+				         <li class=fragment>	RPO of maximum 15 mins and RTO of less than 30 mins </li>
+				         <li class=fragment>	peak OLTP volume between 10-11 AM and between 7-8PM </li>
+
+					</ul>
+
+
+</section>
+
+<section>
+<h2> Current Infrastructure:</h2>
+ 
+<p>Current database size : 7TB</p>
+<p>Current DB server : 32 vCPU / 128 GB RAM</p>
+<p>Current App Server : 8 vCPU / 32 GB RAM (4 nos)</p>
+<p>Current Web Servers : 2vCPU / 8 GB RAM (16 nos)</p>
+ 
+<p>Expected data growth: 30% YoY</p>
+<p>Expected increase in concurrent users : 15% per month</p>
+
+				</section>
+
+
+
+<section> 
+					<h2>Solution Approach with Amazon Cloud </h2>
+				</section>
+
+<section>
+It's a 3 tier application !!
+So we can do lot of things in all the 3 tiers to improve concurrent users support and reduce latency.
+
+</section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" target="_blank"> <img width="1020" height="699" src="oracle-app1.png" alt="Meny"> </a>
+</section>
+
+<section>
+					<h3> First approach is to add Load balancers with DNS </h3>
+					<ol>
+                                         <li class="fragment" data-fragment-index="1"> Elastic Load Balancing automatically distributes incoming application traffic across multiple Amazon EC2 instances.</li>
+                                         <li class="fragment" data-fragment-index="2"> It enables you to achieve fault tolerance in your applications, seamlessly providing the required amount of load balancing capacity needed to route application traffic.</li>
+                                         <li class="fragment" data-fragment-index="3"> You can use Amazon Route 53 health checking and DNS failover features to enhance the availability of the applications running behind Elastic Load Balancers.</li>
+                                         <li class="fragment" data-fragment-index="4"> Route 53 will fail away from a load balancer if there are no healthy EC2 instances registered with the load balancer or if the load balancer itself is unhealthy.</li>
+					</ol>
+
+				</section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" target="_blank"> <img width="1020" height="699" src="oracle-app2.png" alt="Meny"> </a>
+</section>
+
+<section>
+
+                                        <h3>Utilize Autoscaling </h3>
+                                        <p class="fragment">
+                                        Scale my Web and App instance when load increases !!
+                                        </p>
+                                        <ol>
+                                        <li class="fragment"> Cloudwatch agents help you to autoscale </li>
+                                        <li class=fragment > Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define. </li>
+                                        <li class=fragment > You can use Auto Scaling to help ensure that you are running your desired number of Amazon EC2 instances. Auto Scaling can also automatically increase the number of Amazon EC2 instances during demand spikes to maintain performance and decrease capacity during lulls to reduce costs. </li>
+                                        </ol>
+                                </section>
+
+
+<section  >
+
+<h3> Elasticache </h3>
+                                 <ol >
+                                        <li class=fragment> ElastiCache is a web service that makes it easy to deploy, operate, and scale a distributed, in-memory cache </li>
+                                        <li class=fragment>improves the performance of web applications by allowing you to retrieve information from a fast, managed,
+in-memory caching system, instead of relying entirely on slower disk-based databases.  </li>
+                                        <li class=fragment> ElastiCache supports two popular open-source caching engines: Memcached and Redis. </li>
+                                        </ol>
+
+
+</section  >
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" target="_blank"> <img width="1020" height="699" src="oracle-app3-cache.png" alt="Meny"> </a>
+</section>
+
+
+
+                               <section>
+                                <h3> Amazon RDS for MySQL </h3>
+                                 <ol >
+                                        <li class=fragment> Very easy to deploy </li>
+                                        <li class=fragment> Push button scaling </li>
+                                        <li class=fragment> Fast, Predictable Performance </li>
+                                        <li class=fragment> Automated backup </li>
+                                        <li class=fragment> Replication </li>
+                                        <li class=fragment> Read replicas </li>
+                                        </ol>
+
+
+                                </section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/"> <img width="1020" height="699" src="oracle-app5-db-replica.png" > </a>
+</section>
+
+<section  >
+<h3> Amazon CloudFront (CDN) </h3>
+<ol >
+                                        <li class=fragment> Amazon CloudFront content delivery network (CDN) is a web service for content delivery </li>
+                                        <li class=fragment> Amazon CloudFront makes your website's dynamic, static, and streaming content available from a global network of edge locations. When a visitor results in faster download </li>
+                                        </ol>
+
+</section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" > <img width="1020" height="699" src="oracle-app6-cloudfront.png" > </a>
+</section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" > <img width="1020" height="699" src="oracle-app7-nosql.png" > </a>
+</section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" > <img width="1020" height="699" src="oracle-app8-s3.png" > </a>
+</section>
+
+
+
+<section  >
+
+<h3> Service Oriented Architecture </h3>
+
+<p>SOA is, in essence, the abstraction of one large application into many communicating smaller applications. This follows several best practices of software engineering such as de-coupling, separation of concerns and single-responsibility architecture.
+</p>
+</section  >
+
+<section  >
+
+<h3> Amazon Simple Queue Service (Amazon SQS) </h3>
+<p>Amazon Simple Queue Service (Amazon SQS) provides a reliable, highly scalable, hosted message queuing service for
+temporary storage and delivery of short (up to 64 KB) text-based data messages. An Amazon SQS queue is a temporary
+data repository for messages that are waiting for processing (typically a message produced by one application
+component and waiting to be consumed by another).  </p>
+
+</section  >
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" > <img width="1020" height="699" src="oracle-app9-SOA.png" > </a>
+</section>
+
+<section>
+<h3>Seperate databases as per functions </h3>
+				</section>
+
+<section>
+ <a class="image" href="http://ashishnabira.com/" > <img width="1020" height="699" src="oracle-app-db-split.png" > </a>
+</section>
+
+<section>
+<h3>If you want to scale further </h3>
+<p>Fine tune your application </p>
+<p>Go for more SOA features  </p>
+<p> Go for deep analysis of your Stack </p>
+				</section>
+
+
+<section>
+
+<h3>Benefits of cloud computing </h3>
+<ul>
+<p>Trade capital expense for operational expense</p>
+
+<p>Benefit from massive economies of scale</p>
+
+
+<p>Stop guessing capacity</p>
+
+
+<p>Increase speed and agility</p>
+
+
+<p>Stop spending money on running and maintaining data centers</p>
+
+
+<p>Go global in minutes</p>
+</ul>
+
+</section>
+
+<section data-markdown>
 
                 <script type="text/template">
-##Welcome to my presentations
 ###Ashish Nabira
->Sr. Solution Architect
->ashish.nabira@redhat.com
-[Openshift] http://presentations-nabira.rhcloud.com/openshift.html
-[Ansible] http://presentations-nabira.rhcloud.com/ansible.html
+ Sr. Solution Architect
+ 
+ashish.nabira@gmail.com
                 </script>
-</section -->
-
+</section>
 
 
 

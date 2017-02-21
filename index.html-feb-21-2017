@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Ashish Nabira's Presentations</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/nabira.css"> 
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					
+					<h2>Welcome to my presenations</h2>
+                    <small>
+					<p><a href="http://presentations-nabira.rhcloud.com/openshift.html">Openshift</a> </p>
+					<p><a href="http://presentations-nabira.rhcloud.com/ansible.html">Ansible</a> </p>
+					<p><a href="http://presentations-nabira.rhcloud.com/oracle.html">Oracle</a> </p>
+					<p><br>Ashish Nabira</p>
+					<p>Sr. Solution Architect</p>
+					<p>Redhat India</p>
+					<p>ashish.nabira@redhat.com</p>
+                    </small>
+				</section>
+
+
+<!-- section data-markdown data-background-image="redhat-222.png" data-background-size="150px" data-state="img-right">
+
+                <script type="text/template">
+##Welcome to my presentations
+###Ashish Nabira
+>Sr. Solution Architect
+>ashish.nabira@redhat.com
+[Openshift] http://presentations-nabira.rhcloud.com/openshift.html
+[Ansible] http://presentations-nabira.rhcloud.com/ansible.html
+                </script>
+</section -->
+
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				history: true,
+				slideNumber: true, 
+				mousewheel: true, 
+
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
